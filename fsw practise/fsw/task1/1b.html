@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1A</title>
+    <title>Task 1B</title>
 </head>
 <body>
     <form action="">
         <label for="input">Enter the number or string wanted to reverse</label>
         <input type="text" name="input" id="input">
-        <button type="button" onclick="rev(event)">reverse</button>
+        <button type="button" onclick="rev()">reverse</button>
     </form>
     <br>
     <p id="output">
@@ -17,11 +17,15 @@
     </p>
 </body>
 <script>
-    function rev(event) {
-        event.preventDefault();
-        var inp = document.getElementById("input").value;
-        var ans = inp.split('').reverse().join('');
-        document.getElementById("output").innerHTML = "The reverse of " + inp + " is " + ans;
+    function rev() {
+        // event.preventDefault();
+        // var inp = document.getElementById("input").value;
+        // var ans = inp.split('').reverse().join('');
+        // document.getElementById("output").innerHTML = "The reverse of " + inp + " is " + ans;
+        let ar = [123, 34, 132];
+        let ans = ar.reverse()
+        document.getElementById("output").innerHTML = "The reverse of " + ar + " is " + ar.reverse();
+
     }
 </script>
 </html>

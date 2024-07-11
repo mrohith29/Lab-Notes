@@ -1,7 +1,4 @@
-FSW LAB
-[A] Task 8
-[B] Task 9
-[c] task 12
+VP-LAB
 
 => Commands to run a cs program
 i) dotnet new console -n myApp
@@ -24,3 +21,8 @@ iii) dotnet run --project name
 i) dotnet new console -n myApp
 ii) cd myApp
 iii) dotnet run 10 20
+
+FSW-LAB
+
+Todo
+1) task 5
