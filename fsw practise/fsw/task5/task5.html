@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery get() Demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.get("E:\\Lab mannuals\\fsw practise\\task5\\datetime.php", function (data) {
+                    $("#result").html(data);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="result">
+        <h2> The XMLHttpRequest Object by the server date and time</h2>
+    </div>
+    <button type="button">Load Date and Time</button>
+</body>
+
+</html>

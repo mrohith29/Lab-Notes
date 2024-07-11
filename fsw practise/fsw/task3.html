@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text"></p>
+    <script>
+        var s = 5, t = 1, text = "text growing", color;
+        function a() {
+            if (s >= 50) { // When font size reaches 50px, start shrinking
+                t = -1;
+                text = "text shrinking";
+            } else if (s <= 5) { // When font size reaches 5px, start growing
+                t = 1;
+                text = "text growing";
+            }
+    
+            s += 5 * t; // Increase or decrease font size
+            color = t == 1 ? "red" : "blue"; // Change color based on direction
+    
+            document.getElementById("text").innerHTML = "<h1 style=\"font-size:" + s + "px; margin:0px; color:" + color + "\"><b>" + text + "</b></h1>";
+    
+            setTimeout(a, 1000); // Call `a` again after 1 second
+        }
+        a(); // Initial call to start the process
+    </script>
+</body>
+</html>

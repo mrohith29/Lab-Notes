@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1A</title>
+</head>
+<body>
+    <form action="">
+        <label for="input">Enter the number or string wanted to reverse</label>
+        <input type="text" name="input" id="input">
+        <button type="button" onclick="rev(event)">reverse</button>
+    </form>
+    <br>
+    <p id="output">
+
+    </p>
+</body>
+<script>
+    function rev(event) {
+        event.preventDefault();
+        var inp = document.getElementById("input").value;
+        var ans = inp.split('').reverse().join('');
+        document.getElementById("output").innerHTML = "The reverse of " + inp + " is " + ans;
+    }
+</script>
+</html>
