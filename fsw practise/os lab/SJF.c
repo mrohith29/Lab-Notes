@@ -40,3 +40,7 @@ void main()
     }
     printf("\nAverage Waiting time is %f\nAverage Turn Around Time is %f", awt/n, atat/n);
 }
+
+/**
+ * 
+ */
