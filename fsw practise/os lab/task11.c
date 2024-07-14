@@ -58,20 +58,21 @@ int main()
             printf("Scheduling services the request in the order that follows:\n%d\t", start);
             for (i = 0; i < n; i++)
             {
-                min = absolute(a[i], x);
+                min = abs(a[i]-x);
                 pos = i;
-                for (j = i; j < n; j++)
-                    if (min > absolute(x, a[j]))
-                    {
+
+                for(j = i; j<n ;j++) {
+                    if(min > abs(a[i]-x)) {
                         pos = j;
-                        min = absolute(x, a[j]);
+                        min = abs(x-a[j]);
                     }
-                count += absolute(x, a[pos]);
+                }
+                count += abs(x-a[pos]);
                 x = a[pos];
                 a[pos] = a[i];
-                a[i] = x;
                 printf("%d\t", x);
             }
+
             printf("\nTotal Head Movement: %d Cylinders", count);
             break;
         case 3:
@@ -92,9 +93,7 @@ int main()
                 if (a[i] < start)
                     pos++;
             for (i = 0; i < pos; i++)
-                for (j = 0; j < pos -
-                                    i - 1;
-                     j++)
+                for (j = 0; j < pos - i - 1; j++)
                     if (a[j] < a[j + 1])
                     {
                         x = a[j];
