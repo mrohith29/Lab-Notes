@@ -227,7 +227,6 @@ int main()
                 printf("%d\t", x);
             }
             /*for(i=0;i<n;i++)
-            53
             printf("%d\t",a[i]);*/
             printf("\nTotal Head movement: %d Cylinders", count);
             break;
