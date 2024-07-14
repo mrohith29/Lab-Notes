@@ -10,10 +10,10 @@ void main() {
     scanf("%d", &n);
     for(i=0; i<n; i++) {
         printf("\nEnter file %d name ::", i+1);
-        scanf("%s", &F[i]);
+        scanf("%s", F[i]);
         printf("\nEnter file %d size(in kb)::", i+1);
         scanf("%d", &sz[i]);
-        printf("\nEnter block size of file %d :: ",i+1);
+        printf("\nEnter block size of file(in bytes) %d :: ",i+1);
         scanf("%d", &b[i]);
     }
     for(i=0; i<n; i++) {
@@ -41,6 +41,6 @@ void main() {
         }
         printf("\n------------------------------------\n");
         printf("\nDo you want to continue :: (Y:n)");
-        scanf("%d",&ch);
+        scanf("%s",&ch);
     }while(ch!=0);
 }
