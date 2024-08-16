@@ -1,31 +1,41 @@
 ﻿using System;
 using System.Text;
 
-class StringBuilderExample {
-    static void Main(string[] args) {
-        // Create a new StringBuilder instance with an initial string
-        StringBuilder sb = new StringBuilder("Initial String: ");
+class Program {
+    public static void Main(String[] args) {
+        StringBuilder sb = new StringBuilder("Initial String : ");
+        sb.Append("Rohith"); // Append
+        sb.Append(" Mariyala");
         Console.WriteLine(sb);
 
-        // Append strings to the StringBuilder
-        sb.Append("Hello, ");
-        sb.Append("World!");
+        sb.Insert(15, "C#"); // Insert
         Console.WriteLine(sb);
 
-        // Insert a string at a specific index
-        sb.Insert(15, "C# ");
+        sb.Replace("Mariyala", "Student"); // Replace
         Console.WriteLine(sb);
 
-        // Replace a string within the StringBuilder
-        sb.Replace("World", "StringBuilder");
+        sb.Remove(0, 15); // Remove
         Console.WriteLine(sb);
 
-        // Remove characters from the StringBuilder
-        sb.Remove(0, 15); // Removes "Initial String: "
+        string str = sb.ToString(); // ToString
+        Console.WriteLine(str);
 
-        // Convert the StringBuilder to a string and print it
-        string result = sb.ToString();
-        Console.WriteLine(sb);
-        Console.WriteLine(result);
+        string first = "Rohith ";
+        string last = "Mariyala ";
+
+        string name = string.Concat(last, first); // Concat
+        Console.WriteLine(name);
+
+        Console.WriteLine("Length of first name is "+ first.Length); // Length
+
+        Console.WriteLine("Comparing two strings: "+ first.CompareTo(last)); // CompareTo
+
+        Console.WriteLine("Using trim finction: "+ first.Trim('R')); // Trim
+
+        Console.WriteLine("Using SubString function: "+ last.Substring(3, 5)); // Substring
+
+        Console.WriteLine("Using equal() function: "+ first.Equals(last)); // Equals
+
+        Console.WriteLine("Using Replace function: "+ first.Replace("R", "M")); // Replace
     }
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Lab mannuals\\fsw practise\\vp lab\\task2\\task2.csproj",
+      "projectUniqueName": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task2\\task2.csproj",
       "projectName": "task2",
-      "projectPath": "E:\\Lab mannuals\\fsw practise\\vp lab\\task2\\task2.csproj",
+      "projectPath": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task2\\task2.csproj",
       "packagesPath": "C:\\Users\\mariy\\.nuget\\packages\\",
-      "outputPath": "E:\\Lab mannuals\\fsw practise\\vp lab\\task2\\obj\\",
+      "outputPath": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mariy\\AppData\\Roaming\\NuGet\\NuGet.Config",

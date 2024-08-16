@@ -20,7 +20,7 @@ class Program {
         }
     }
 
-    static void Main(string[] args) {
+    public static void Main(string[] args) {
         // Creating the first thread
         Thread thread1 = new Thread(new ThreadStart(ThreadMethod1));
 

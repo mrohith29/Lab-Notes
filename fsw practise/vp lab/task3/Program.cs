@@ -19,6 +19,6 @@ class Employee {
         ob.id = 1234;
         ob.name = "rohith";
         ob.salary = 100000;
-Hey.         ob.display();
+         ob.display();
     }
 }

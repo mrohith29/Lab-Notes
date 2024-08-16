@@ -16,7 +16,7 @@ class Methodoverloading {
         Methodoverloading ob = new Methodoverloading();
         Console.WriteLine(ob.sum(12,13));
         Console.WriteLine(ob.sum(12,13,14));
-        Console.WriteLine(ob.sum(12.9d,13dI ));
+        Console.WriteLine(ob.sum(12.9d,13d));
         
     }
 }

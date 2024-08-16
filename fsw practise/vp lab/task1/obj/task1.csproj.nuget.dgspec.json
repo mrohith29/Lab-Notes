@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Lab mannuals\\fsw practise\\vp lab\\task1\\task1.csproj": {}
+    "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task1\\task1.csproj": {}
   },
   "projects": {
-    "E:\\Lab mannuals\\fsw practise\\vp lab\\task1\\task1.csproj": {
+    "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task1\\task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Lab mannuals\\fsw practise\\vp lab\\task1\\task1.csproj",
+        "projectUniqueName": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task1\\task1.csproj",
         "projectName": "task1",
-        "projectPath": "E:\\Lab mannuals\\fsw practise\\vp lab\\task1\\task1.csproj",
+        "projectPath": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task1\\task1.csproj",
         "packagesPath": "C:\\Users\\mariy\\.nuget\\packages\\",
-        "outputPath": "E:\\Lab mannuals\\fsw practise\\vp lab\\task1\\obj\\",
+        "outputPath": "E:\\github repository\\Lab-Notes\\fsw practise\\vp lab\\task1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mariy\\AppData\\Roaming\\NuGet\\NuGet.Config",
