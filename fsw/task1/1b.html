@@ -7,8 +7,9 @@
 </head>
 <body>
     <form action="">
-        <label for="input">Enter the number or string wanted to reverse</label>
-        <input type="text" name="input" id="input">
+        <!-- <label for="input">Enter the number or string wanted to reverse</label> -->
+        <!-- <input type="text" name="input" id="input"> -->
+         <h1>Press button to reverse the list [123, 34, 132]</h1>
         <button type="button" onclick="rev()">reverse</button>
     </form>
     <br>
@@ -23,8 +24,7 @@
         // var ans = inp.split('').reverse().join('');
         // document.getElementById("output").innerHTML = "The reverse of " + inp + " is " + ans;
         let ar = [123, 34, 132];
-        let ans = ar.reverse()
-        document.getElementById("output").innerHTML = "The reverse of " + ar + " is " + ar.reverse();
+        document.getElementById("output").innerHTML = "The reverse of [" + ar + "] is [" + ar.reverse() + "]";
 
     }
 </script>

@@ -1,0 +1,118 @@
+register.html
+<!doctype html>
+<body>
+<form action="servlet/MobileDetails" method="post">
+<fieldset style="width:25%; background-color:#b3ffff">
+<h2 align="center">Mobile Details form</h2><hr>
+<table>
+<tr><td>Model Number</td>
+<td><input type="text" name="model" required /></td></tr>
+<tr><td>Mobile Price</td>
+<td><input type="text" name="price" required /></td></tr>
+<tr><td>Mobile Company</td>
+<td><input type="text" name="company" required /></td></tr>
+<tr><td>Mobile Color</td>
+<td><input type="text" name="color" required/></td></tr>
+<tr><td><input type="reset" value="Reset"/></td>
+<td><input type="submit" value="Register"/></td></tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>
+
+
+Mobiledetails.java
+import java.io.*;
+import java.sql.*;
+import javax.servlet.ServletException;
+19-FULL STACK WEB DEVELOPMENT LAB
+import javax.servlet.http.*;
+public class MobileDetails extends HttpServlet
+{
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws
+ServletException, IOException
+{
+response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+String model = request.getParameter("model");
+int price = Integer.parseInt(request.getParameter("price"));
+String company = request.getParameter("company");
+String color = request.getParameter("color");
+try
+{
+//load the driver
+Class.forName("oracle.jdbc.driver.OracleDriver");
+//create connection object
+Connection con=DriverManager.getConnection(
+"jdbc:oracle:thin:@localhost:1521:xe","local","test");
+//create the prepared statement object
+PreparedStatement ps=con.prepareStatement("insert into MobileDetails
+values(?,?,?,?)");
+ps.setString(1,model);
+ps.setInt(2,price);
+ps.setString(3,company);
+ps.setString(4, color);
+int i = ps.executeUpdate();
+if(i>0)
+out.print("<font color='green' size='4'>Record inserted successfully...</font>");
+//create the statement object
+Statement stmt = con.createStatement();
+String sql;
+sql = "SELECT * FROM MobileDetails";
+ResultSet rs = stmt.executeQuery(sql);
+out.println("<table border=1 >");
+out.println("<caption><h2>Mobile Details</h2></caption>");
+out.println("<tr style='background-color:#ffffb3; color:red'>");
+out.println("<th>Model Id</th>");
+20-FULL STACK WEB DEVELOPMENT LAB
+out.println("<th>Price(Rs.)</th>");
+out.println("<th>Company</th>");
+out.println("<th>Color</th>");
+out.println("</tr>");
+// Extract data from result set
+while(rs.next())
+{
+//Retrieve by column name
+String mModel = rs.getString("model");
+int mPrice = rs.getInt("price");
+String mCompany = rs.getString("company");
+String mColor = rs.getString("color");
+//Display values
+out.println("<tr style='background-color:#b3ffd9;'>");
+out.println("<td>" + mModel + "</td>");
+out.println("<td>" + mPrice + "</td>");
+out.println("<td>" + mCompany + "</td>");
+out.println("<td>" + mColor + "</td>");
+out.println("</tr>");
+}
+out.println("</table>");
+out.println("<a href='register.html'>Home</a>");
+// Clean-up environment
+rs.close();
+stmt.close();
+con.close();
+}
+catch (Exception ex)
+{
+ex.printStackTrace();
+}
+out.close();
+}
+}
+
+
+web.xml
+<web-app>
+<servlet>
+<servlet-name>MobileDetails</servlet-name>
+<servlet-class>MobileDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>MobileDetails</servlet-name>
+<url-pattern>/servlet/MobileDetails</url-pattern>
+</servlet-mapping>
+<welcome-file-list>
+<welcome-file>register.html</welcome-file>
+</welcome-file-list>
+</web-app>
