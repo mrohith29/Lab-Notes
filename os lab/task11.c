@@ -62,7 +62,7 @@ int main()
                 pos = i;
 
                 for(j = i; j<n ;j++) {
-                    if(min > abs(a[i]-x)) {
+                    if(min > abs(a[j]-x)) {
                         pos = j;
                         min = abs(x-a[j]);
                     }
