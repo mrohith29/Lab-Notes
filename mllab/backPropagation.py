@@ -35,9 +35,10 @@ for i in range(epoch):
     EH = d_output.dot(wout.T)
     hiddengrad = derivatives_sigmoid(hlayer_act)
     d_hiddenlayer = EH * hiddengrad
-    wout += hlayer_act.T.dot(d_output) *lr
-
-wh += x.T.dot(d_hiddenlayer) * lr
+    wout += hlayer_act.T.dot(d_output) * lr
+    bout += np.sum(d_output, axis=0, keepdims=True) * lr
+    wh += x.T.dot(d_hiddenlayer) * lr
+    bh += np.sum(d_hiddenlayer, axis=0, keepdims=True) * lr
 print("Input: \n", str(x))
 print("Acutial Output: \n", str(y))
 print("Predicted Output: \n", output)
