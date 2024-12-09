@@ -1,0 +1,24 @@
+// C++ code
+//
+#include<SoftwareSerial.h> 
+void setup() { 
+// put your setup code here, to run once: 
+pinMode(A4,INPUT); 
+pinMode(13,OUTPUT); 
+Serial.begin(9600); 
+} 
+void loop() { 
+int sensorvalue=analogRead(A4); 
+Serial.println(sensorvalue); 
+if(sensorvalue<500) 
+{ 
+Serial.println("led is on"); 
+digitalWrite(13,HIGH); 
+delay(1000);
+}
+else 
+{ 
+digitalWrite(13,LOW); 
+delay(1000); 
+}
+}

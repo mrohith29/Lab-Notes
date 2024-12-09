@@ -1,0 +1,15 @@
+void setup() {
+pinMode(A0,INPUT);
+Serial.begin(9600);
+pinMode(8,OUTPUT);
+}
+void loop() {
+// Serial.print("LDR = ");
+int i=analogRead(A0);
+Serial.println(i);
+if(i>60)
+digitalWrite(8,1);
+else
+digitalWrite(8,0);
+delay(500);
+}
