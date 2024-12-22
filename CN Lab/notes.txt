@@ -1,3 +1,46 @@
+--> Switch setup
+sh#conf t
+sh(config)#
+sh(config)#line con 0
+sh(config-line)#password griet123
+sh(config-line)#login
+sh(config-line)#exit
+sh(config)#enable secret griet12345
+sh(config)#service password-encryption
+sh(config)#exit
+sh#wr
+sh#show start
+sh#show startup-config
+
+
+--> Router setup
+Router>en
+Router#conf t
+Router(config)#int Fa0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router#en
+Router#conf t
+Router(config)#enable secret griet1234
+Router(config)#login
+Router(config)#no ip domain-lookup
+Router(config)#exit
+Router#
+Router#conf t
+Router(config)#line console 0
+Router(config-line)#password 1234
+Router(config-line)#login
+Router(config-line)#exit
+Router(config)#line vty 0 4
+Router(config-line)#password g1234
+Router(config-line)#login
+Router(config-line)#exit
+Router(config)#
+Router(config)#exit
+Router#exit
+
+
 --> Static NAT
 Router(config)#ip nat inside source static 10.0.0.2 200.100.50.25
 Router#sh ip nat translations
@@ -74,3 +117,10 @@ myswitch(config-line)#login local
 myswitch(config-line)#transport input ssh
 myswitch(config-line)#exit
 myswitch(config)#crypto key generate rsa
+
+
+
+
+
+--> link
+https://legacy.netacad.com/portal/resources/file/bb132b3b-117e-419d-8de5-bbdfe37667d8
