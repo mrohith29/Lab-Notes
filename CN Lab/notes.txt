@@ -1,0 +1,76 @@
+--> Static NAT
+Router(config)#ip nat inside source static 10.0.0.2 200.100.50.25
+Router#sh ip nat translations
+
+--> Dynamic NAT
+
+Router(config)#access-list 1 permit 10.0.0.0 0.0.0.255
+Router(config)#ip nat pool newpool 155.4.12.1 155.4.12.3 netmask 255.255.255.0
+Router(config)#ip nat inside source list 1 pool newpool
+Router(config)#ip route 0.0.0.0 0.0.0.0 155.4.12.5
+
+
+--> Inter VLAN
+MLSW(config)#vlan 10
+MLSW(config-vlan)#vlan 20
+MLSW(config-vlan)#vlan 30
+MLSW(config-vlan)#exit
+MLSW(config)#
+MLSW(config)#int range g1/0/1-2
+MLSW(config-if-range)#switchport mode trunk
+MLSW(config-if-range)#end
+
+
+--> static routing
+Router(config-if)#int Se2/0
+Router(config-if)#ip address 20.0.0.1 255.0.0.0
+Router(config-if)#no shut
+Router(config-if)#exit
+Router(config)#
+Router(config)#ip route 30.0.0.0 255.0.0.0 20.0.0.2
+
+
+--> rip
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#network 30.0.0.0
+Router(config-router)#network 20.0.0.0
+Router(config-router)#no auto-summary 
+
+
+--> ospf
+Router(config)#router ospf 1
+Router(config-router)#network 10.0.0.0 0.0.0.255 area 0
+Router(config-router)#network 20.0.0.0 0.0.0.255 area 0
+Router(config-router)#ex
+
+
+--> dhcp
+Router(config)#ip dhcp pool lan1
+Router(dhcp-config)#network 10.0.0.0 255.0.0.0
+Router(dhcp-config)#default-router 10.0.0.1
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#
+Router(dhcp-config)#ip dhcp excluded-address 10.0.0.1
+Router(config)#int fa0/0
+Router(config-if)#ip add 10.0.0.1 255.0.0.0
+Router(config-if)#no shut
+
+
+--> telnet
+Switch(config)#username myname password mypass
+Switch(config)#line vty 0 15
+Switch(config-line)#login local
+Switch(config-line)#transport input telnet
+Switch(config-line)#end
+Switch#
+
+--> ssh
+Switch(config)#hostname myswitch
+myswitch(config)#ip domain-name mydomain
+myswitch(config)#username myname1 password mypass1
+myswitch(config)#line vty 0 15
+myswitch(config-line)#login local 
+myswitch(config-line)#transport input ssh
+myswitch(config-line)#exit
+myswitch(config)#crypto key generate rsa
