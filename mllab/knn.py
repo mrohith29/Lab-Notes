@@ -21,15 +21,15 @@ pred = knn.predict(x)
 print(pred)
 print(iris_dataset["target_names"][pred])
 
-i=1
-x_t = x_test[i]
-x = np.array([x])
-print(x)
+# i=1
+# x_t = x_test[i]
+# x = np.array([x])
+# print(x)
 
-for i in range(len(x_test)):
-    x = x_test[i]
-    x_new = np.array([x])
-    pred = knn.predict(x_new)
-    print(iris_dataset['target_names'][y_test[i]], pred, iris_dataset['target_names'][pred])
+# for i in range(len(x_test)):
+#     x = x_test[i]
+#     x_new = np.array([x])
+#     pred = knn.predict(x_new)
+#     print(iris_dataset['target_names'][y_test[i]], pred, iris_dataset['target_names'][pred])
 
-print(knn.score(x_test, y_test))
+# print(knn.score(x_test, y_test))
