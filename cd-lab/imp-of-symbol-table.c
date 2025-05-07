@@ -51,3 +51,13 @@ void main()
         }
     }
 }
+
+/*
+C:\Users\srini\OneDrive\Desktop\CDPrograns task3.exe Expression terminated by $:a+h$
+Given Expression:ab
+Symbol Table 
+Symbol addr type
+a    14675168   identifier
++    14625280   operator
+b    14625336   identifier
+*/

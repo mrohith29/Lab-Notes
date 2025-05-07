@@ -132,3 +132,14 @@ void first(char c)
         }
     }
 }
+
+/*
+C:\Users\srini OneDrive\Desktop\CDPrograns task4.exe
+enter no of terminals abcd
+enter the of productionsil
+enter the productions (epsilonse) enter X and Y as alternates for E and T
+A=aB
+B=dN
+C=bH
+D=cL
+*/
